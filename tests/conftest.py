@@ -11,6 +11,7 @@ def get_chrome_options():
     options.add_argument('--window-size=1650,900')
     return options
 
+
 @pytest.fixture
 def get_webdriver(get_chrome_options):
     options = get_chrome_options
@@ -21,7 +22,7 @@ def get_webdriver(get_chrome_options):
 @pytest.fixture(scope='function')
 def setup(request, get_webdriver):
     driver = get_webdriver
-    url = 'https://www.macys.com/dqwd'
+    url = 'https://www.macys.com/dqwfqwfd'
     if request.cls is not None:
         request.cls.driver = driver
     driver.get(url)
