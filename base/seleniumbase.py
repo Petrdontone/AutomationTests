@@ -1,3 +1,4 @@
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
@@ -36,7 +37,7 @@ class SeleniumBase:
                                locator_name)
 
     def are_visible(self, find_by: str, locator: str, locator_name: str = None) -> List[WebElement]:
-        return self.wait.until(ec.visibility_of_all_elements_located((self.__get_selenium_by(find_by), locator)),
+        return WebDriverWait(20).until(ec.visibility_of_all_elements_located((self.__get_selenium_by(find_by), locator)),
                                locator_name)
 
     def are_present(self, find_by: str, locator: str, locator_name: str = None) -> List[WebElement]:
